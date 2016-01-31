@@ -60,7 +60,7 @@ names(combined_tidy)<-c("Subjects","Activity",means_names,std_names)
 combined_tidyDT <- data.table(combined_tidy)
 SummaryDT<- combined_tidyDT[,lapply(.SD,mean), by=c("Subjects","Activity")]
 #Orders the summary data set
-SummaryDT <- SummaryDT[order(Subjects,Activity)]l
+SummaryDT <- SummaryDT[order(Subjects,Activity)]
 #Writes the summarized data table as a txt file
 write.table(SummaryDT,"summary_output.txt",row.names = FALSE)
 
